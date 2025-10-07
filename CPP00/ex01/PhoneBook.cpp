@@ -6,28 +6,56 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:20:42 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/07 13:31:32 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/07 18:50:51 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int main (void)
-{
-    Phonebook libro;
-    // libro.("Gabriel","Freire","gafreire","6238420424","gallego");
-
-    libro.search_contact();
-    return (0);
-}
-
 void Phonebook::add_contact(void)
 {
-    Contact contact;
-    
+    Phonebook libro;
+    std::string prueba;
+
+    prueba = "";    
     if (this->index > 7)
         std::cout << "ERROR" << std::endl;
+    std::cout << "Introduce un nombre" << std::endl;
+    while (!std::getline(std::cin,prueba)|| prueba.empty())
+    {
+        std::cout << "Vuelve a introducir un nombre valido" << std::endl;
+    }
+    libro.contacts[0].set_first_name(prueba);
+        
+    std::cout << "Introduce los apellidos" << std::endl;
+    while (!std::getline(std::cin,prueba)|| prueba.empty())
+    {
+        std::cout << "Vuelve a introducir unos apellidos validos" << std::endl;
+    }
+    libro.contacts[0].set_last_name(prueba);
     
+    std::cout << "Introduce un nickname" << std::endl;
+    while (!std::getline(std::cin,prueba)|| prueba.empty())
+    {
+        std::cout << "Vuelve a introducir un nickname valido" << std::endl;
+    }
+    libro.contacts[0].set_nickname(prueba);
+    
+    std::cout << "Introduce un numero de telefono" << std::endl;
+    while (!std::getline(std::cin,prueba)|| prueba.empty())
+    {
+        std::cout << "Vuelve a introducir un numero de telefono" << std::endl;
+    }
+    libro.contacts[0].set_phone_number(prueba);
+    
+    std::cout << "Introduce un dark secret" << std::endl;
+    while (!std::getline(std::cin,prueba)|| prueba.empty())
+    {
+        std::cout << "Vuelve a introducir un numero de telefono" << std::endl;
+    }
+    libro.contacts[0].set_darkest_secret(prueba);
+
+    std::cout << libro.contacts[0].get_first_name() << libro.contacts[0].get_last_name() << libro.contacts[0].get_nickname() << libro.contacts[0].get_phone_number() << libro.contacts[0].get_darkest_secret() << std::endl;
 }
 void Phonebook::search_contact(void)
 {

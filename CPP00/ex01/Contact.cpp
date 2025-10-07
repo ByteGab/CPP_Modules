@@ -6,20 +6,12 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 11:16:49 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/07 13:44:03 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:06:38 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-// int main (void)
-// {
-//     Contact contact0;
-//     contact0.set_contact("Gabriel","Freire","gafreire","6238420424","gallego");
-
-//     std::cout << contact0.get_first_name() << " " << contact0.get_last_name() << " " <<  contact0.get_nickname() << " " <<  contact0.get_phone_number() << " " <<  contact0.get_darkest_secret()  <<  " " << std::endl;
-//     return (0);
-// }
  // setter
 
 void Contact::set_first_name(std::string first_name)
