@@ -6,14 +6,13 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 11:16:49 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/07 17:06:38 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/08 16:08:35 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
  // setter
-
 void Contact::set_first_name(std::string first_name)
 {
     this->first_name = first_name;
@@ -56,6 +55,7 @@ std::string Contact::get_darkest_secret()const
     return (this->darkest_secret);
 }
 
+// constructor
 Contact::Contact()
 {   
 }

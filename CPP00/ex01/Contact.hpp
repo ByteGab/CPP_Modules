@@ -6,14 +6,14 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 11:38:28 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/07 13:40:36 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/08 16:08:00 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include <iostream> // la uso??
+#include <iostream>
 #include <string>
 
 class Contact
