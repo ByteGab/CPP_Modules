@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 11:07:32 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/10 18:58:54 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/10 19:11:44 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,23 @@ Account::Account(int initial_deposit)
     _nbAccounts++;
     _totalAmount = _totalAmount + initial_deposit;
     Account::_displayTimestamp();
-    std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
+    std::cout   << " index:" 
+                << _accountIndex 
+                << ";amount:" 
+                << _amount 
+                << ";created" 
+                << std::endl;
 }
 
 Account::~Account()
 {
     Account::_displayTimestamp();
-    std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
+    std::cout   << " index:" 
+                << _accountIndex 
+                << ";amount:" 
+                << _amount 
+                << ";closed" 
+                << std::endl;
 }
 
 void Account::makeDeposit (int deposit)
