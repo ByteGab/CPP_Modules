@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:20:42 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/13 12:53:22 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:20:05 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,10 +140,9 @@ void Phonebook::search_contact(void)
     std::cout << " ___________________________________________ " << std::endl;
     std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
-    i = (this->_index - this->_count + i + 8) % 8;
     while (i < this->_count)
     {
-        pos = (this->_index - this->_count + i + 8) % 8;
+        pos = i;
         
         // column index
         std::string col = std::string(1, static_cast<char>('0' + (i + 1)));
@@ -176,7 +175,7 @@ void Phonebook::search_contact(void)
         std::cout << "\n\033[1;36m📇 Select an index (1-" << this->_count << "):\033[0m " << std::endl;
         if (std::getline(std::cin, input) && input != "")
         {
-            if (input.size() == 1 && input[0] >= '1' && input[0] <= '8' && this->_contacts[input[0] - 1 - '0'].get_first_name().size())
+            if (input.size() == 1 && input[0] >= '1' && input[0] <= static_cast<char>('0' + this->_count))
                 break;
         }
         else
@@ -184,8 +183,8 @@ void Phonebook::search_contact(void)
      }
     if (!std::cin.eof())
     {
-        selected = (input[0] - '0') - 1;
-        pos = (this->_index - this->_count + selected + 8) % 8;
+        selected = input[0] - '1';
+        pos = selected;
         
         std::cout << "\n\033[1;32m═══════════════════════════════════════\033[0m" << std::endl;
         std::cout << "\033[1;32m📖 CONTACT CARD\033[0m" << std::endl;
