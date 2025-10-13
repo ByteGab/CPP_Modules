@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:39:56 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/08 11:38:49 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/13 12:52:25 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int main (void)
     while (menu != "EXIT")
     {
         std::cout << "\033[36mSelect an option: "
-                 "\033[32mADD\033[36m, "
-                 "\033[34mSEARCH\033[36m or "
-                 "\033[31mEXIT\033[0m"
-              << std::endl;
+                     "\033[32mADD\033[36m, "
+                     "\033[34mSEARCH\033[36m or "
+                     "\033[31mEXIT\033[0m"
+                  << std::endl;
         std::getline(std::cin, menu);
         if (std::cin.eof())
         {

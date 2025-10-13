@@ -6,65 +6,40 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:20:42 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/08 16:29:38 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/13 12:53:22 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void Phonebook::add_contact(void)
+int checkIsAlpha(const std::string &str)
 {
-    std::string input;
+    size_t i; 
 
-    input = "";    
-    std::cout << "Introduce un nombre" << std::endl;
-    while (!std::getline(std::cin,input)|| input.empty())
+    i = 0;
+
+    while (i < str.size())
     {
-        if (std::cin.eof())
-            return ;
-        std::cout << "Vuelve a introducir un nombre valido" << std::endl;
+        if (!std::isalpha(str[i]))
+            return (1);
+        i++;
     }
-    this->contacts[this->index].set_first_name(input);
-        
-    std::cout << "Introduce los apellidos" << std::endl;
-    while (!std::getline(std::cin,input)|| input.empty())
+    return (0);
+}
+
+int checkIsNbr(const std::string &str)
+{
+    size_t i; 
+
+    i = 0;
+
+    while (i < str.size())
     {
-        if (std::cin.eof())
-            return ;
-        std::cout << "Vuelve a introducir unos apellidos validos" << std::endl;
+        if (!std::isdigit(str[i]))
+            return (1);
+        i++;
     }
-    this->contacts[this->index].set_last_name(input);
-    
-    std::cout << "Introduce un nickname" << std::endl;
-    while (!std::getline(std::cin,input)|| input.empty())
-    {
-        if (std::cin.eof())
-            return ;
-        std::cout << "Vuelve a introducir un nickname valido" << std::endl;
-    }
-    this->contacts[this->index].set_nickname(input);
-    
-    std::cout << "Introduce un numero de telefono" << std::endl;
-    while (!std::getline(std::cin,input)|| input.empty())
-    {
-        if (std::cin.eof())
-            return ;
-        std::cout << "Vuelve a introducir un numero de telefono" << std::endl;
-    }
-    this->contacts[this->index].set_phone_number(input);
-    
-    std::cout << "Introduce un dark secret" << std::endl;
-    while (!std::getline(std::cin,input)|| input.empty())
-    {
-        if (std::cin.eof())
-            return ;
-        std::cout << "Vuelve a introducir un dark secret" << std::endl;
-    }
-    this->contacts[this->index].set_darkest_secret(input);
-    if (this->count < 8)
-        this->count++;
-    std::cout << "Created a new contact: "<< this->contacts[this->index].get_first_name() << " (" << this->count << "/8)" << std::endl;
-    this->index = (this->index + 1) % 8;
+    return (0);
 }
 
 static std::string add_spaces(int size)
@@ -90,13 +65,74 @@ static std::string fix_width(const std::string& str, unsigned long max)
     return (str);
 }
 
+void Phonebook::add_contact(void)
+{
+    std::string input;
+
+    input = "";
+        
+    std::cout << "\033[1;32m📛 Enter a name: \033[0m";
+    while (!std::getline(std::cin,input)|| input.empty() || checkIsAlpha(input))
+    {
+        if (std::cin.eof())
+            return ;
+        std::cout << "\033[1;31m❌ Please enter a valid name: \033[0m";
+    }
+    this->_contacts[this->_index].set_first_name(input);
+        
+    std::cout << "\033[1;32m🧾 Enter the last name(s): \033[0m";
+    while (!std::getline(std::cin,input)|| input.empty() || checkIsAlpha(input))
+    {
+        if (std::cin.eof())
+            return ;
+        std::cout << "\033[1;31m❌ Please enter valid last names: \033[0m";
+    }
+    this->_contacts[this->_index].set_last_name(input);
+    
+    std::cout << "\033[1;36m🎭 Enter a nickname: \033[0m";
+    while (!std::getline(std::cin,input)|| input.empty() || checkIsAlpha(input))
+    {
+        if (std::cin.eof())
+            return ;
+         std::cout << "\033[1;31m❌ Please enter a valid nickname: \033[0m";
+    }
+    this->_contacts[this->_index].set_nickname(input);
+    
+    std::cout << "\033[1;33m📞 Enter a phone number: \033[0m";
+    while (!std::getline(std::cin,input)|| input.empty() || checkIsNbr(input))
+    {
+        if (std::cin.eof())
+            return ;
+        std::cout << "\033[1;31m❌ Please enter a valid phone number: \033[0m";
+    }
+    this->_contacts[this->_index].set_phone_number(input);
+    
+    std::cout << "\033[1;34m💀 Enter a dark secret: \033[0m";
+    while (!std::getline(std::cin,input)|| input.empty() || checkIsAlpha(input))
+    {
+        if (std::cin.eof())
+            return ;
+        std::cout << "\033[1;31m❌ Please enter a valid dark secret: \033[0m";
+    }
+    this->_contacts[this->_index].set_darkest_secret(input);
+    
+    if (this->_count < 8)
+        this->_count++;
+    std::cout << "\n\033[1;32m✅ Successfully created a new contact:\033[0m "
+              << "\033[1;36m" << this->_contacts[this->_index].get_first_name()
+              << "\033[0m (" << this->_count << "/8)" << std::endl;
+    this->_index = (this->_index + 1) % 8;
+}
+
 void Phonebook::search_contact(void)
 {
     int i;
-    std::string prueba;
+    int pos;
+    int selected;
+    std::string input;
 
     i = 0;
-    if (this->count == 0)
+    if (this->_count == 0)
     {
         std::cout << "PhoneBook empty" << std::endl;
         return ;
@@ -104,29 +140,29 @@ void Phonebook::search_contact(void)
     std::cout << " ___________________________________________ " << std::endl;
     std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
-    i = (this->index - this->count + i + 8) % 8;
-    while (i < this->count)
+    i = (this->_index - this->_count + i + 8) % 8;
+    while (i < this->_count)
     {
-        // índice físico en el array circular
-        int phi = (this->index - this->count + i + 8) % 8;
+        pos = (this->_index - this->_count + i + 8) % 8;
         
+        // column index
         std::string col = std::string(1, static_cast<char>('0' + (i + 1)));
         col = fix_width(col, 10);
         std::cout << "|" << add_spaces(10 - static_cast<int>(col.size())) << col;
         
-        // ----- Columna: First Name -----
-        col = fix_width(this->contacts[phi].get_first_name(), 10);
+        // column first name
+        col = fix_width(this->_contacts[pos].get_first_name(), 10);
         std::cout << "|" << add_spaces(10 - static_cast<int>(col.size())) << col;
         
-        // ----- Columna: Last Name -----
-        col = fix_width(this->contacts[phi].get_last_name(), 10);
+        // column Last Name
+        col = fix_width(this->_contacts[pos].get_last_name(), 10);
         std::cout << "|" << add_spaces(10 - static_cast<int>(col.size())) << col;
         
-        // ----- Columna: Nickname -----
-        col = fix_width(this->contacts[phi].get_nickname(), 10);
+        // columna nickname
+        col = fix_width(this->_contacts[pos].get_nickname(), 10);
         std::cout << "|" << add_spaces(10 - static_cast<int>(col.size())) << col;
         
-        // Cierre de fila
+        // close contact
         std::cout << "|" << std::endl;
         std::cout << "|----------|----------|----------|----------|" << std::endl;
         i++;
@@ -134,37 +170,49 @@ void Phonebook::search_contact(void)
     
     i = 0;
     std::cout << std::endl;
+    // show contact
      while (!std::cin.eof())
      {
-        std::cout << "Select an index (1-" << this->count << "): " << std::endl;
-        if (std::getline(std::cin, prueba) && prueba != "")
+        std::cout << "\n\033[1;36m📇 Select an index (1-" << this->_count << "):\033[0m " << std::endl;
+        if (std::getline(std::cin, input) && input != "")
         {
-            if (prueba.size() == 1 && prueba[0] >= '1' && prueba[0] <= '8' && this->contacts[prueba[0] - 1 - '0'].get_first_name().size())
+            if (input.size() == 1 && input[0] >= '1' && input[0] <= '8' && this->_contacts[input[0] - 1 - '0'].get_first_name().size())
                 break;
         }
         else
-            std::cout << "Invalid index contact" << std::endl;         
+            std::cout << "\033[1;31m❌ Invalid contact index.\033[0m" << std::endl;         
      }
     if (!std::cin.eof())
     {
-        int selected = (prueba[0] - '0') - 1;
-        // convierte índice lógico a físico
-        int phi = (this->index - this->count + selected + 8) % 8;
-
-        // muestra los 5 campos del contacto
-        std::cout << "First Name: " << this->contacts[phi].get_first_name() << std::endl;
-        std::cout << "Last Name: " << this->contacts[phi].get_last_name() << std::endl;
-        std::cout << "Nickname: " << this->contacts[phi].get_nickname() << std::endl;
-        std::cout << "Phone Number: " << this->contacts[phi].get_phone_number() << std::endl;
-        std::cout << "Darkest Secret: " << this->contacts[phi].get_darkest_secret() << std::endl;
+        selected = (input[0] - '0') - 1;
+        pos = (this->_index - this->_count + selected + 8) % 8;
+        
+        std::cout << "\n\033[1;32m═══════════════════════════════════════\033[0m" << std::endl;
+        std::cout << "\033[1;32m📖 CONTACT CARD\033[0m" << std::endl;
+        std::cout << "\033[1;32m═══════════════════════════════════════\033[0m\n" << std::endl;
+        
+        std::cout << "   \033[1;33m👤 First Name:\033[0m      " 
+                  << this->_contacts[pos].get_first_name() << std::endl;
+        std::cout << "   \033[1;33m🧾 Last Name:\033[0m       " 
+                  << this->_contacts[pos].get_last_name() << std::endl;
+        std::cout << "   \033[1;33m🎭 Nickname:\033[0m        " 
+                  << this->_contacts[pos].get_nickname() << std::endl;
+        std::cout << "   \033[1;33m📞 Phone Number:\033[0m    " 
+                  << this->_contacts[pos].get_phone_number() << std::endl;
+        std::cout << "   \033[1;33m💀 Darkest Secret:\033[0m  " 
+                  << this->_contacts[pos].get_darkest_secret() << std::endl;
+        
+        std::cout << "\n\033[1;32m═══════════════════════════════════════\033[0m" << std::endl;
+        std::cout << "\033[1;32m✅ End of contact details.\033[0m" << std::endl;
+        std::cout << "\033[1;32m═══════════════════════════════════════\033[0m" << std::endl;
     }
         
 }
-
+// constructor
 Phonebook::Phonebook()
 {
-    this->index = 0;
-    this->count = 0;
+    this->_index = 0;
+    this->_count = 0;
 }
 
 Phonebook::~Phonebook()
