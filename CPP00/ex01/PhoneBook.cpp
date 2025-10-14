@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:20:42 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/13 18:20:05 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/14 10:52:21 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static std::string fix_width(const std::string& str, unsigned long max)
     }
     return (str);
 }
-
+// add contact
 void Phonebook::add_contact(void)
 {
     std::string input;
@@ -144,24 +144,19 @@ void Phonebook::search_contact(void)
     {
         pos = i;
         
-        // column index
         std::string col = std::string(1, static_cast<char>('0' + (i + 1)));
         col = fix_width(col, 10);
         std::cout << "|" << add_spaces(10 - static_cast<int>(col.size())) << col;
         
-        // column first name
         col = fix_width(this->_contacts[pos].get_first_name(), 10);
         std::cout << "|" << add_spaces(10 - static_cast<int>(col.size())) << col;
         
-        // column Last Name
         col = fix_width(this->_contacts[pos].get_last_name(), 10);
         std::cout << "|" << add_spaces(10 - static_cast<int>(col.size())) << col;
         
-        // columna nickname
         col = fix_width(this->_contacts[pos].get_nickname(), 10);
         std::cout << "|" << add_spaces(10 - static_cast<int>(col.size())) << col;
-        
-        // close contact
+
         std::cout << "|" << std::endl;
         std::cout << "|----------|----------|----------|----------|" << std::endl;
         i++;
@@ -169,7 +164,6 @@ void Phonebook::search_contact(void)
     
     i = 0;
     std::cout << std::endl;
-    // show contact
      while (!std::cin.eof())
      {
         std::cout << "\n\033[1;36m📇 Select an index (1-" << this->_count << "):\033[0m " << std::endl;
