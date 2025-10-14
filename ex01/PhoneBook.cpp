@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:20:42 by gafreire          #+#    #+#             */
-/*   Updated: 2025/10/14 10:52:21 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:09:04 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static std::string fix_width(const std::string& str, unsigned long max)
     }
     return (str);
 }
-// add contact
+
 void Phonebook::add_contact(void)
 {
     std::string input;
@@ -201,7 +201,7 @@ void Phonebook::search_contact(void)
     }
         
 }
-// constructor
+
 Phonebook::Phonebook()
 {
     this->_index = 0;
