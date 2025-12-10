@@ -6,9 +6,12 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 10:56:16 by gafreire          #+#    #+#             */
-/*   Updated: 2025/12/02 16:38:40 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:38:07 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
 #include <string>
 #include <iostream>
@@ -20,6 +23,7 @@ private:
 public:
     void setType(std::string type);
     const std::string& getType();
-    Weapon();
+    Weapon(std::string type);
     ~Weapon();
 };
+#endif

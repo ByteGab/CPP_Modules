@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:07:59 by gafreire          #+#    #+#             */
-/*   Updated: 2025/12/02 12:55:14 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:28:22 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ private:
     std::string _name; 
 public:
     void attack();
-    HumanB(std::string name,Weapon *weapon);
+    void setWeapon(Weapon &weapon);
+    HumanB(std::string name);
     ~HumanB();
 };

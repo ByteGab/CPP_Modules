@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 10:48:32 by gafreire          #+#    #+#             */
-/*   Updated: 2025/12/02 12:01:52 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:43:23 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ const std::string& Weapon::getType()
     return (this->_type);
 }
 
-Weapon::Weapon()
-{ 
+Weapon::Weapon(std::string type)
+{
+    this->_type = type;
 }
 Weapon::~Weapon()
 {
