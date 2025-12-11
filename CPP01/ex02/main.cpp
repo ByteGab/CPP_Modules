@@ -6,14 +6,13 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:25:51 by gafreire          #+#    #+#             */
-/*   Updated: 2025/12/02 10:43:46 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/12/11 19:44:25 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 
-// Definiciones de colores ANSI
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
