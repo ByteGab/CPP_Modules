@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:25:51 by gafreire          #+#    #+#             */
-/*   Updated: 2025/12/11 19:44:25 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/12/12 22:23:16 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ int main (void)
     std::cout << "Value pointed to by stringREF: " << GREEN << stringREF << RESET << std::endl;
     std::cout << std::endl;
 
-    return 0;
+    return (0);
 }
