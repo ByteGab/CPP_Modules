@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:55:55 by gafreire          #+#    #+#             */
-/*   Updated: 2025/11/27 17:51:16 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:43:44 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main (void)
 {
     Zombie *zombie = newZombie("Foo");
     zombie->announce();
-    zombie->~Zombie();
 
     randomChump("Andrei");
+    delete zombie;
     return (0);
 }
