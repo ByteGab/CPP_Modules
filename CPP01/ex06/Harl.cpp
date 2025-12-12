@@ -6,17 +6,11 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 18:38:03 by gafreire          #+#    #+#             */
-/*   Updated: 2025/12/11 19:02:47 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/12/12 21:06:44 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-
-#define RESET   "\033[0m"
-#define RED     "\033[31m"
-#define YELLOW  "\033[33m"
-#define BLUE    "\033[34m"
-#define GRAY    "\033[90m"
 
 void Harl::debug(void)
 {
