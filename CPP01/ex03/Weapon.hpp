@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 10:56:16 by gafreire          #+#    #+#             */
-/*   Updated: 2025/12/10 12:38:07 by gafreire         ###   ########.fr       */
+/*   Updated: 2025/12/12 18:31:47 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Weapon
 private:
     std::string _type;
 public:
-    void setType(std::string type);
+    void               setType(std::string type);
     const std::string& getType();
     Weapon(std::string type);
     ~Weapon();
