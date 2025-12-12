@@ -1,5 +1,5 @@
 
-NAME            = exercise00
+NAME            = exercice00
 
 SOURCES         = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 OBJECTS         = $(SOURCES:.cpp=.o)

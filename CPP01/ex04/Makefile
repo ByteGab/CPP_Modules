@@ -1,4 +1,4 @@
-NAME            = exercise04
+NAME            = exercice04
 
 SOURCES         = main.cpp
 OBJECTS         = $(SOURCES:.cpp=.o)
