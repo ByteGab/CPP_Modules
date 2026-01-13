@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 15:19:22 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/12 13:17:57 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/13 11:49:34 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ class Fixed
 private:
     /* data */
     int _value;
-    static const int _fractional;
+    static const int _fractionalBits = 8;
 public:
     // constructor
     Fixed();
     Fixed(const Fixed &cpy);
     // operator overload
-    Fixed &operator=(const Fixed cpy);
+    Fixed &operator=(const Fixed &cpy);
     // destructor
     ~Fixed();
     // getter
