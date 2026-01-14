@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 15:19:22 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/13 12:12:42 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/14 16:07:22 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Fixed
 {
 private:
-    int _value;
-    static const int _fractionalBits = 8;
+    int     _value;
+    static const int    _fractionalBits = 8;
 public:
     // constructor default
     Fixed();
@@ -38,8 +38,9 @@ public:
     void setRawBits(int const raw);
     // getter
     int  getRawBits(void) const;
-
+    // converts fixed point to float
     float toFloat(void) const;
+    // converts fixed point to int
     int toInt(void) const;
 };
 

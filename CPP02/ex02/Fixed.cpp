@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 15:19:19 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/13 18:58:42 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/14 16:19:25 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
     return (out);
 }
 
-// comparasion operators
 bool    Fixed::operator>(const Fixed &cpy) const
 {
     return (this->getRawBits() > cpy.getRawBits());   
@@ -100,7 +99,6 @@ bool    Fixed::operator!=(const Fixed &cpy) const
     return (this->getRawBits() != cpy.getRawBits());   
 }
 
-// aritmetics operators
 Fixed   Fixed::operator+(const Fixed &cpy) const
 {
     return (Fixed(this->toFloat() + cpy.toFloat()));
@@ -121,7 +119,6 @@ Fixed   Fixed::operator/(const Fixed &cpy) const
     return (Fixed(this->toFloat() / cpy.toFloat()));
 }
 
-// increment / decrement
 Fixed   &Fixed::operator++(void)
 {
     this->_value++;
@@ -147,8 +144,6 @@ Fixed   Fixed::operator--(int)
     this->_value--;
     return (tmp);
 }
-
-// static functions
 
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {

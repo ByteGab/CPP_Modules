@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 15:19:22 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/13 18:18:03 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/14 16:19:38 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Fixed
 {
 private:
-    int _value;
-    static const int _fractionalBits = 8;
+    int     _value;
+    static const int    _fractionalBits = 8;
 public:
     // constructor default
     Fixed();
@@ -55,10 +55,10 @@ public:
     Fixed   operator*(const Fixed &cpy) const;
     Fixed   operator/(const Fixed &cpy) const;
     // increment / decrement
-    Fixed   &operator++(void); // Pre-incremento
-    Fixed   operator++(int); // Post-incremento
-    Fixed   &operator--(void); // Pre-decremento
-    Fixed   operator--(int); // Post-decremento
+    Fixed   &operator++(void);
+    Fixed   operator++(int);
+    Fixed   &operator--(void);
+    Fixed   operator--(int);
     // static functions
     static Fixed& min(Fixed &a, Fixed &b);
     static const Fixed& min(const Fixed &a, const Fixed &b);
