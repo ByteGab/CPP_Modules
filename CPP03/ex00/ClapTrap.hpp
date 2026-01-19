@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:48 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/15 21:25:27 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:25:23 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"      
+#define YELLOW  "\033[33m"      
+#define BLUE    "\033[34m"      
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+#define BOLD    "\033[1m"
 
 class ClapTrap
 {
@@ -24,10 +32,12 @@ private:
     unsigned int    _attackDamage;
     
 public:
-    // constructor
+    // constructor default
     ClapTrap(void);
-    // copy constructor
+    // constructor
     ClapTrap(std::string name);
+    // assignment operator
+    ClapTrap(const ClapTrap &cpy);
     // operator overload
     ClapTrap &operator=(const ClapTrap &cpy);
     ~ClapTrap();

@@ -6,49 +6,99 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:58 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/15 21:42:55 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:32:14 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void) 
-    : _name(" "), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+    : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-   std::cout << "ClapTrap " << _name << " has been constructed!" << std::endl;
+   std::cout << GREEN << "ClapTrap " << _name << " has been constructed!" << RESET << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) 
+ClapTrap::ClapTrap(std::string name)
     : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "ClapTrap " << _name << " has been constructed!" << std::endl;
+    std::cout << GREEN << "ClapTrap " << _name << " has been constructed!" << RESET << std::endl;
 }
 
-// ClapTrap &ClapTrap::operator=(const ClapTrap &cpy) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
-// {
-    
-// }
+
+ClapTrap::ClapTrap(const ClapTrap &cpy) 
+    : _name(cpy._name), _hitPoints(cpy._hitPoints), _energyPoints(cpy._energyPoints), _attackDamage(cpy._attackDamage)
+{
+    std::cout << CYAN << "ClapTrap Copy Constructor called" << RESET << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &cpy) 
+{
+    std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
+    if (this != &cpy) // Protección contra auto-asignación
+    {
+        this->_name = cpy._name;
+        this->_hitPoints = cpy._hitPoints;
+        this->_energyPoints = cpy._energyPoints;
+        this->_attackDamage = cpy._attackDamage;
+    }
+    return (*this);
+}
 
 ClapTrap::~ClapTrap() 
 {
-    std::cout << "ClapTrap " << _name << " has been destroyed." << std::endl;
+    std::cout << RED << "ClapTrap " << _name << " has been destroyed." << RESET << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
     if (_hitPoints == 0)
     {
-        std::cout << "ClapTrap " << _name << " is out of energy!" << std::endl;
+        std::cout << RED << "ClapTrap " << _name << " is dead and cannot attack!" << RESET << std::endl;
         return;
     }
     
     if ((_energyPoints == 0))
     {
-        std::cout << "ClapTrap " << _name << " is dead and cannot attack!" << std::endl;
+        std::cout << YELLOW << "ClapTrap " << _name << " is out of energy!" << RESET << std::endl;
         return;
     }
 
     _energyPoints--;
-    std::cout << "ClapTrap " << _name << " attacks " << target << " , causing " 
-              << _attackDamage << " points of damage! " << std::endl;
+    std::cout << BLUE << "ClapTrap " << _name << " attacks " << target << ", causing " 
+              << _attackDamage << " points of damage! " << RESET << std::endl;
+}
+
+void ClapTrap::takeDamage(unsigned int amount)
+{
+    if (_hitPoints == 0)
+    {
+        std::cout << RED << "ClapTrap " << _name << " is already dead!" << RESET << std::endl;
+        return;
+    }
+    if (amount > _hitPoints)
+        _hitPoints = 0;
+    else
+        _hitPoints-= amount;
+    std::cout << MAGENTA << "ClapTrap " << _name << " took " << amount 
+          << " points of damage! HP is now " << _hitPoints << "." << RESET << std::endl;
+}
+
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+    if (_hitPoints == 0)
+    {
+        std::cout << RED << "ClapTrap " << _name << " is dead and cannot be repaired!" << RESET << std::endl;
+        return;
+    }
+    
+    if ((_energyPoints == 0))
+    {
+        std::cout << YELLOW << "ClapTrap " << _name << " is out of energy!" << RESET << std::endl;
+        return;
+    }
+    _energyPoints--;
+    _hitPoints+= amount;
+    std::cout << GREEN << "ClapTrap " << _name << " repairs itself, recovering " << amount 
+          << " hit points! HP is now " << _hitPoints << "." << RESET << std::endl;
 }
