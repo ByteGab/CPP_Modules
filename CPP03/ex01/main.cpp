@@ -6,50 +6,45 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:32 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/19 14:21:48 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/20 12:38:34 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
 
 int main (void)
 {
     // Test 1
-    std::cout << std::endl << MAGENTA << "=== " << "TEST 1: CONSTRUCTORS AND NORMAL FLOW" << " ===" << RESET << std::endl;
-    ClapTrap robotA("Wall-E");
-    ClapTrap robotB("Terminator");
-    robotA.attack("Target Dummy");
-    robotA.takeDamage(5);
-    robotA.beRepaired(3);
+    std::cout << std::endl << MAGENTA << "=== " << "TEST 1: CONSTRUCTORS AND STATS" << " ===" << RESET << std::endl;
+    std::cout << YELLOW << "[Creating R2-D2]" << RESET << std::endl;
+    ScavTrap robot("R2-D2");
     
     // Test 2
-    std::cout << std::endl << MAGENTA << "=== " << "TEST 2: ENERGY DEPLETION (Loop)" << " ===" << RESET << std::endl;
-    for (int i = 0; i < 11; i++)
-    {
-        std::cout << YELLOW << "Attempt " << i + 1 << ": " << RESET; 
-        robotB.attack("Punching bag");
-    }
-    std::cout << YELLOW << "Repair attempt without power: " << RESET;
-    robotB.beRepaired(5);
-
+    std::cout << std::endl << MAGENTA << "=== " << "TEST 2: NEW ATTACK)" << " ===" << RESET << std::endl;
+    robot.attack("Target Dummy");;
+    robot.takeDamage(10);
+    robot.beRepaired(10);
+    
     // Test 3
-    std::cout << std::endl << MAGENTA << "=== " << "TEST 3: DEATH AND POST-MORTEM ACTIONS" << " ===" << RESET << std::endl;
-    ClapTrap robotC("Bumblebee");
-    robotC.takeDamage(100);
-    std::cout << RED << "Trying to revive / acting while dead: " << RESET << std::endl;
-    robotC.attack("Nobody");
-    robotC.beRepaired(10);
-    robotC.takeDamage(5);
-
+    std::cout << std::endl << MAGENTA << "=== " << "TEST 3: (GUARD GATE)" << " ===" << RESET << std::endl;
+    robot.guardGate();
+    
     // Test 4
-    std::cout << std::endl << MAGENTA << "=== " << "TEST 4: CANONICAL FORM (Copies and Assignment)" << " ===" << RESET << std::endl;
-    std::cout << BLUE << "[Copying to Robot-A in Clone-A]" << RESET << std::endl;
-    ClapTrap clonA(robotA); 
-    std::cout << BLUE << "[Assigning Robot-A to a new Robot-D]" << RESET << std::endl;
-    ClapTrap robotD("Temp");
-    robotD = robotA;
-    std::cout << std::endl << "Final state of Clone-A (Should be identical to Robot-A):" << std::endl;
-    clonA.attack("Test Clon");
+    std::cout << YELLOW << "[Testing the Copy Constructor: Cloning a R2-D2]" << RESET << std::endl;
+    ScavTrap clon(robot);
+    
+    std::cout << YELLOW << "[Testing the Assignment Operator: Creating an Empty ScavTrap]" << RESET << std::endl;
+    ScavTrap assigned("Basic");
+    
+    std::cout << YELLOW << "[Assigning a Robot to the Empty ScavTrap]" << RESET << std::endl;
+    assigned = robot;
+    
+    std::cout << std::endl << "Testing That the Clones Work:" << std::endl;
+    clon.attack("Clon Target");
+    assigned.guardGate();
+    std::cout << std::endl << "Testing error Guard gate:" << std::endl;
+    clon.takeDamage(110);
+    clon.guardGate();
 
     std::cout << std::endl << MAGENTA << "=== " << "DESTRUCTORS (Automatic upon exit)" << " ===" << RESET << std::endl;
     return (0);

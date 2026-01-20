@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:48 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/19 14:25:23 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/20 12:21:30 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ public:
     ClapTrap(void);
     // constructor
     ClapTrap(std::string name);
-    // assignment operator
+    // copy Constructor
     ClapTrap(const ClapTrap &cpy);
     // operator overload
     ClapTrap &operator=(const ClapTrap &cpy);
+    // destructor
     ~ClapTrap();
 
     void attack(const std::string& target);
