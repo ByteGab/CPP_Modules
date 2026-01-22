@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 15:52:37 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/21 11:36:57 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:32:37 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@
 
 class FragTrap : virtual public ClapTrap
 {
-private:
-    /* data */
-public:
-    // constructor default
-    FragTrap(void);
-    // constructor
-    FragTrap(std::string name);
-    // copy Constructor
-    FragTrap(const FragTrap &cpy);
-    // operator overload
-    FragTrap &operator=(const FragTrap &cpy);
-    // destructor
-    ~FragTrap();
-
-    void highFivesGuys(void);
+    public:
+        // constructor default
+        FragTrap(void);
+        // constructor
+        FragTrap(std::string name);
+        // copy Constructor
+        FragTrap(const FragTrap &cpy);
+        // operator overload
+        FragTrap &operator=(const FragTrap &cpy);
+        // destructor
+        ~FragTrap();
+    
+        void highFivesGuys(void);
 };
 
 
