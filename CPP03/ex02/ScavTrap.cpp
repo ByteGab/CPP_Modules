@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 14:38:38 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/20 12:29:45 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:05:29 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void ScavTrap::attack(const std::string& target)
         return;
     }
     
-    if ((_energyPoints == 0))
+    if (_energyPoints == 0)
     {
         std::cout << YELLOW << "ScavTrap " << _name << " is out of energy!" << RESET << std::endl;
         return;

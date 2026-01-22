@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:58 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/22 18:17:51 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:02:44 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void ClapTrap::attack(const std::string& target)
         return;
     }
     
-    if ((_energyPoints == 0))
+    if (_energyPoints == 0)
     {
         std::cout << YELLOW << "ClapTrap " << _name << " is out of energy!" << RESET << std::endl;
         return;
@@ -92,7 +92,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         return;
     }
     
-    if ((_energyPoints == 0))
+    if (_energyPoints == 0)
     {
         std::cout << YELLOW << "ClapTrap " << _name << " is out of energy!" << RESET << std::endl;
         return;
