@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:32 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/22 16:36:58 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:47:29 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int main (void)
     std::cout << std::endl << MAGENTA << "=== " << "TEST 3: DEATH AND POST-MORTEM ACTIONS" << " ===" << RESET << std::endl;
     ClapTrap robotC("Bumblebee");
     robotC.takeDamage(100);
+    
     std::cout << RED << "Trying to revive / acting while dead: " << RESET << std::endl;
     robotC.attack("Nobody");
     robotC.beRepaired(10);

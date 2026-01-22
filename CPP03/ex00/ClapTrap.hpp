@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:48 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/20 12:21:30 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:46:56 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,26 @@
 
 class ClapTrap
 {
-private:
-    std::string     _name;
-    unsigned int    _hitPoints;
-    unsigned int    _energyPoints;
-    unsigned int    _attackDamage;
-    
-public:
-    // constructor default
-    ClapTrap(void);
-    // constructor
-    ClapTrap(std::string name);
-    // copy Constructor
-    ClapTrap(const ClapTrap &cpy);
-    // operator overload
-    ClapTrap &operator=(const ClapTrap &cpy);
-    // destructor
-    ~ClapTrap();
+    private:
+        std::string     _name;
+        unsigned int    _hitPoints;
+        unsigned int    _energyPoints;
+        unsigned int    _attackDamage;
+        
+    public:
+        // constructor default
+        ClapTrap(void);
+        // constructor
+        ClapTrap(std::string name);
+        // copy Constructor
+        ClapTrap(const ClapTrap &cpy);
+        // operator overload
+        ClapTrap &operator=(const ClapTrap &cpy);
+        // destructor
+        ~ClapTrap();
 
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 };
 
