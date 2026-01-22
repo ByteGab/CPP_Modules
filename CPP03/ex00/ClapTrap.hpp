@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:48 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/22 18:46:56 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:08:30 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class ClapTrap
 
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
+        void beRepaired(unsigned int amount);
 };
 
 #endif
