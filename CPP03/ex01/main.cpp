@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:32 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/20 16:20:53 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:28:01 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 int main (void)
 {
-    // Test 1
     std::cout << std::endl << MAGENTA << "=== " << "TEST 1: CONSTRUCTORS AND STATS" << " ===" << RESET << std::endl;
     std::cout << YELLOW << "[Creating R2-D2]" << RESET << std::endl;
     ScavTrap robot("R2-D2");
     
-    // Test 2
     std::cout << std::endl << MAGENTA << "=== " << "TEST 2: NEW ATTACK)" << " ===" << RESET << std::endl;
     robot.attack("Target Dummy");;
     robot.takeDamage(10);
     robot.beRepaired(10);
     
-    // Test 3
     std::cout << std::endl << MAGENTA << "=== " << "TEST 3: (GUARD GATE)" << " ===" << RESET << std::endl;
     robot.guardGate();
     
-    // Test 4
     std::cout << YELLOW << "[Testing the Copy Constructor: Cloning R2-D2]" << RESET << std::endl;
     ScavTrap clon(robot);
     
