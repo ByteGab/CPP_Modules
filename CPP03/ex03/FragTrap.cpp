@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 15:52:47 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/20 16:24:22 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:29:49 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ FragTrap::~FragTrap()
 void FragTrap::highFivesGuys(void)
 {
     if (_hitPoints == 0)
-        std::cout << RED << "ScavTrap " << _name << " is dead and cannot high five!" << RESET << std::endl;
-    std::cout << CYAN << "ScavTrap " << _name << " \"HIGH FIVE!\"!" << RESET << std::endl;       
+    {
+        std::cout << RED << "FragTrap " << _name << " is dead and cannot high five!" << RESET << std::endl;
+        return ;
+    }
+    std::cout << CYAN << "FragTrap " << _name << " \"HIGH FIVE!\"!" << RESET << std::endl;       
 }

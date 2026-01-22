@@ -6,47 +6,61 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:32 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/20 16:26:11 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:13:09 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main (void)
 {
-    // Test 1
-    std::cout << std::endl << MAGENTA << "=== " << "TEST 1: CONSTRUCTORS " << " ===" << RESET << std::endl;
-    std::cout << YELLOW << "[Creating Bender]" << RESET << std::endl;
-    FragTrap robot("Bender");
-    
-    // Test 2
-    std::cout << std::endl << MAGENTA << "=== " << "TEST 2: STATS AND ATTACK)" << " ===" << RESET << std::endl;
-    robot.attack("Target Dummy");;
-    robot.takeDamage(20);
-    robot.beRepaired(10);
-    
-    // Test 3
-    std::cout << std::endl << MAGENTA << "=== " << "TEST 3: (HIGH FIVES)" << " ===" << RESET << std::endl;
-    robot.highFivesGuys();
-    
-    // Test 4
-    std::cout << YELLOW << "[Testing the Copy Constructor: Cloning Bender]" << RESET << std::endl;
-    FragTrap clon(robot);
-    
-    std::cout << YELLOW << "[Testing the Assignment Operator: Creating an Empty FragTrap]" << RESET << std::endl;
-    FragTrap assigned("Basic");
-    
-    std::cout << YELLOW << "[Assigning a Robot to the Empty FragTrap]" << RESET << std::endl;
-    assigned = robot;
-    
-    std::cout << std::endl << "Testing That the Clones Work:" << std::endl;
-    clon.attack("Clon Target");
-    assigned.highFivesGuys();
-    
-    std::cout << std::endl << "Testing error High fives:" << std::endl;
-    clon.takeDamage(110);
-    clon.highFivesGuys();
+    // TEST 1
+    std::cout << std::endl << MAGENTA << "=== " << "TEST 1: CONSTRUCTORS AND WHOAMI " << " ===" << RESET << std::endl;
+    {
+        std::cout << YELLOW << "[1] Creating 'Optimus Prime'..." << RESET << std::endl;
+        std::cout << "(You should see: 1 ClapTrap, 1 FragTrap, 1 ScavTrap, 1 DiamondTrap)" << std::endl;
+        
+        DiamondTrap robot("Optimus Prime");
 
-    std::cout << std::endl << MAGENTA << "=== " << "DESTRUCTORS (Automatic upon exit)" << " ===" << RESET << std::endl;
+        std::cout << std::endl << YELLOW << "[2] Testing whoAmI()..." << RESET << std::endl;
+        robot.whoAmI();
+        
+        std::cout << YELLOW << "[3] Destruyendo a 'Monster'..." << RESET << std::endl;
+    }
+    
+    std::cout << std::endl << MAGENTA << "=== " << "TEST 2: VERIFICACIÓN DE PODERES " << " ===" << RESET << std::endl;
+    {
+        std::cout << YELLOW << "[1] Creating 'Optimus Prime'..." << RESET << std::endl;
+        DiamondTrap robot("Optimus Prime");
+
+        std::cout << std::endl << YELLOW << "[2] Testing Attack (ScavTrap inheritance)..." << RESET << std::endl;
+        robot.attack("Optimus Prime");
+
+        std::cout << std::endl << YELLOW << "[3] Testing Special Ability (FragTrap inheritance)..." << RESET << std::endl;
+        robot.highFivesGuys();
+
+        std::cout << std::endl << YELLOW << "[4] Testing Guardian Mode (ScavTrap inheritance)..." << RESET << std::endl;
+        robot.guardGate();
+    }
+
+    std::cout << std::endl << MAGENTA << "=== " << "TEST 3: CANONICAL (COPIES) " << " ===" << RESET << std::endl;
+    {
+        std::cout << YELLOW << "[1] Creando Original..." << RESET << std::endl;
+        DiamondTrap original("Original");
+
+        std::cout << std::endl << YELLOW << "[2] Testing Copy Constructor (Clon)..." << RESET << std::endl;
+        DiamondTrap clon(original);
+        
+        std::cout << std::endl << YELLOW << "[3] Modifying the Clone to verify that they are independent..." << RESET << std::endl;
+        clon.attack("Original"); // El clon ataca al original
+
+        std::cout << std::endl << YELLOW << "[4] Testing Assignment Operator (=)..." << RESET << std::endl;
+        DiamondTrap asignado("Trash"); // Creamos uno temporal
+        asignado = original; // Lo sobrescribimos
+        
+        std::cout << std::endl << YELLOW << "[5] Verifying the identity of the assigned..." << RESET << std::endl;
+        asignado.whoAmI();
+    }
+    
     return (0);
 }

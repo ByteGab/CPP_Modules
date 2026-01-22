@@ -1,7 +1,7 @@
 
-NAME            = exercise02
+NAME            = exercise03
 
-SOURCES         =  main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SOURCES         =  main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJECTS         = $(SOURCES:.cpp=.o)
 
 CC              = c++
