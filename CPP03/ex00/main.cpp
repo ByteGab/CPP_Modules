@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:32 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/19 14:21:48 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 16:36:58 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main (void)
 {
-    // Test 1
     std::cout << std::endl << MAGENTA << "=== " << "TEST 1: CONSTRUCTORS AND NORMAL FLOW" << " ===" << RESET << std::endl;
     ClapTrap robotA("Wall-E");
     ClapTrap robotB("Terminator");
@@ -22,7 +21,6 @@ int main (void)
     robotA.takeDamage(5);
     robotA.beRepaired(3);
     
-    // Test 2
     std::cout << std::endl << MAGENTA << "=== " << "TEST 2: ENERGY DEPLETION (Loop)" << " ===" << RESET << std::endl;
     for (int i = 0; i < 11; i++)
     {
@@ -32,7 +30,6 @@ int main (void)
     std::cout << YELLOW << "Repair attempt without power: " << RESET;
     robotB.beRepaired(5);
 
-    // Test 3
     std::cout << std::endl << MAGENTA << "=== " << "TEST 3: DEATH AND POST-MORTEM ACTIONS" << " ===" << RESET << std::endl;
     ClapTrap robotC("Bumblebee");
     robotC.takeDamage(100);
@@ -41,13 +38,15 @@ int main (void)
     robotC.beRepaired(10);
     robotC.takeDamage(5);
 
-    // Test 4
     std::cout << std::endl << MAGENTA << "=== " << "TEST 4: CANONICAL FORM (Copies and Assignment)" << " ===" << RESET << std::endl;
+    
     std::cout << BLUE << "[Copying to Robot-A in Clone-A]" << RESET << std::endl;
     ClapTrap clonA(robotA); 
+    
     std::cout << BLUE << "[Assigning Robot-A to a new Robot-D]" << RESET << std::endl;
     ClapTrap robotD("Temp");
     robotD = robotA;
+    
     std::cout << std::endl << "Final state of Clone-A (Should be identical to Robot-A):" << std::endl;
     clonA.attack("Test Clon");
 
