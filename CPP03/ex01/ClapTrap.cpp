@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:56:58 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/19 14:32:14 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:22:16 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ ClapTrap::ClapTrap(const ClapTrap &cpy)
 ClapTrap &ClapTrap::operator=(const ClapTrap &cpy) 
 {
     std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
-    if (this != &cpy) // Protección contra auto-asignación
+    if (this != &cpy)
     {
-        this->_name = cpy._name;
-        this->_hitPoints = cpy._hitPoints;
-        this->_energyPoints = cpy._energyPoints;
-        this->_attackDamage = cpy._attackDamage;
+        _name = cpy._name;
+        _hitPoints = cpy._hitPoints;
+        _energyPoints = cpy._energyPoints;
+        _attackDamage = cpy._attackDamage;
     }
     return (*this);
 }
