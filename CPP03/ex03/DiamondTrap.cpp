@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 11:28:07 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/21 19:17:26 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/26 17:31:39 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name")
 {
     this->_name = name;
     this->_hitPoints = FragTrap::_hitPoints;
-    this->_energyPoints = ScavTrap::_energyPoints;
+    this->_energyPoints = 50;
     this->_attackDamage = FragTrap::_attackDamage;
     std::cout << GREEN << "DiamondTrap " << _name << " has been constructed!" << RESET << std::endl;
 }
