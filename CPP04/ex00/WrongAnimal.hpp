@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/22 23:04:05 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/26 22:33:23 by gafreire         ###   ########.fr       */
+/*   Created: 2026/01/26 20:38:39 by gafreire          #+#    #+#             */
+/*   Updated: 2026/01/26 22:34:15 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WrongAnimal_HPP
+#define WrongAnimal_HPP
 
 #include <iostream>
 #define RESET   "\033[0m"
@@ -23,24 +23,24 @@
 #define CYAN    "\033[36m"
 #define BOLD    "\033[1m"
 
-class Animal
+class WrongAnimal
 {
     protected:
         std::string _type;
     public:
         // constructor default
-        Animal(void);
+        WrongAnimal(void);
         // constructor
-        Animal(std::string type);
+        WrongAnimal(std::string type);
         // assignment operator
-        Animal(const Animal &cpy);
+        WrongAnimal(const WrongAnimal &cpy);
         // operator overload
-        Animal &operator=(const Animal &cpy);
+        WrongAnimal &operator=(const WrongAnimal &cpy);
         // destructor
-        virtual ~Animal();
+        ~WrongAnimal();
 
         std::string  getType() const;
-        virtual void makeSound() const;
+        void makeSound() const;
 };
 
 #endif

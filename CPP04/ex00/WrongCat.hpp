@@ -6,31 +6,28 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:27:39 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/22 23:33:34 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/26 22:33:58 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 public:
     // constructor default
-    Cat(void);
-    // constructor
-    Cat(std::string name);
+    WrongCat(void);
     // assignment operator
-    Cat(const Cat &cpy);
+    WrongCat(const WrongCat &cpy);
     // operator overload
-    Cat &operator=(const Cat &cpy);
+    WrongCat &operator=(const WrongCat &cpy);
     // destructor
-    virtual ~Cat();
+    ~WrongCat();
     
-    void getType();
-    void makesound();
+    void makeSound() const;
 };
 
 #endif

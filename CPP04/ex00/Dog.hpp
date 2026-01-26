@@ -6,22 +6,20 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:27:39 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/22 23:30:36 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/26 22:33:35 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-
 #ifndef DOG_HPP
 #define DOG_HPP
+
+#include "Animal.hpp"
 
 class Dog : public Animal
 {
 public:
     // constructor default
     Dog(void);
-    // constructor
-    Dog(std::string name);
     // assignment operator
     Dog(const Dog &cpy);
     // operator overload
@@ -29,8 +27,7 @@ public:
     // destructor
     virtual ~Dog();
     
-    void getType();
-    virtual void makesound();
+    void makeSound() const;
 };
 
 #endif

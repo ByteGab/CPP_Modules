@@ -6,22 +6,20 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:27:39 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/22 23:32:42 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/26 22:33:47 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-
 #ifndef CAT_HPP
 #define CAT_HPP
+
+#include "Animal.hpp"
 
 class Cat : public Animal
 {
 public:
     // constructor default
     Cat(void);
-    // constructor
-    Cat(std::string name);
     // assignment operator
     Cat(const Cat &cpy);
     // operator overload
@@ -29,8 +27,7 @@ public:
     // destructor
     virtual ~Cat();
     
-    void getType();
-    virtual void makesound();
+    void makeSound() const;
 };
 
 #endif
