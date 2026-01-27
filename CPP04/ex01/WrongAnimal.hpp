@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 22:46:30 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/27 17:40:26 by gafreire         ###   ########.fr       */
+/*   Created: 2026/01/26 20:38:39 by gafreire          #+#    #+#             */
+/*   Updated: 2026/01/26 22:34:15 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef WrongAnimal_HPP
+#define WrongAnimal_HPP
 
 #include <iostream>
 #define RESET   "\033[0m"
@@ -23,22 +23,24 @@
 #define CYAN    "\033[36m"
 #define BOLD    "\033[1m"
 
-class Brain
+class WrongAnimal
 {
-    private:
-        std::string ideas[100];
+    protected:
+        std::string _type;
     public:
         // constructor default
-        Brain(void);
+        WrongAnimal(void);
+        // constructor
+        WrongAnimal(std::string type);
         // assignment operator
-        Brain(const Brain &cpy);
+        WrongAnimal(const WrongAnimal &cpy);
         // operator overload
-        Brain &operator=(const Brain &cpy);
+        WrongAnimal &operator=(const WrongAnimal &cpy);
         // destructor
-        ~Brain();
+        ~WrongAnimal();
 
-        void setIdea(int index,  std::string idea);
-        std::string getIdea(int idex) const;
+        std::string  getType() const;
+        void makeSound() const;
 };
 
 #endif

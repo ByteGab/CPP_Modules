@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:27:39 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/27 20:01:45 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/26 22:33:58 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
-    private:
-        Brain *_brain; 
-    public:
-        // constructor default
-        Dog(void);
-        // assignment operator
-        Dog(const Dog &cpy);
-        // operator overload
-        Dog &operator=(const Dog &cpy);
-        // destructor
-        virtual ~Dog();
-        
-        void makeSound() const;
-        void setIdea(int index, std::string idea) const;
-        std::string getIdea(int index) const;
+public:
+    // constructor default
+    WrongCat(void);
+    // assignment operator
+    WrongCat(const WrongCat &cpy);
+    // operator overload
+    WrongCat &operator=(const WrongCat &cpy);
+    // destructor
+    ~WrongCat();
+    
+    void makeSound() const;
 };
 
 #endif

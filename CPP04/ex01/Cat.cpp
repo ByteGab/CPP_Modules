@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:50:45 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/26 23:05:18 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:25:20 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Cat::Cat(void) : Animal("Cat")
 {
     this->_brain = new Brain();
-   std::cout << GREEN << "Cat " << _type << " has been constructed!" << RESET << std::endl;
+   std::cout << GREEN << _type << " has been constructed!" << RESET << std::endl;
 }
 
 Cat::Cat(const Cat &cpy) : Animal (cpy)
@@ -40,10 +40,20 @@ Cat &Cat::operator=(const Cat &cpy)
 Cat::~Cat()
 {
     delete _brain;
-    std::cout << RED << "Cat " << _type << " has been destroyed." << RESET << std::endl;
+    std::cout << RED << _type << " has been destroyed." << RESET << std::endl;
 }
 
 void Cat::makeSound() const
 {
-       std::cout << GREEN << "Cat says: " << _type << " MIAU" << RESET << std::endl;
+       std::cout << GREEN << _type << " says: " << " MIAU" << RESET << std::endl;
+}
+
+void Cat::setIdea(int index, std::string idea) const
+{
+    this->_brain->setIdea(index, idea);
+}
+
+std::string Cat::getIdea(int index) const
+{
+    return this->_brain->getIdea(index);
 }

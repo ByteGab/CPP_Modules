@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:37:42 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/26 23:02:19 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:07:50 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog(void) : Animal("Dog")
 {
     this->_brain = new Brain();
-   std::cout << GREEN << "Dog " << _type << " has been constructed!" << RESET << std::endl;
+   std::cout << GREEN <<  _type << " has been constructed!" << RESET << std::endl;
 }
 
 Dog::Dog(const Dog &cpy) : Animal (cpy)
@@ -39,10 +39,20 @@ Dog &Dog::operator=(const Dog &cpy)
 Dog::~Dog()
 {
     delete _brain;
-    std::cout << RED << "Dog " << _type << " has been destroyed." << RESET << std::endl;
+    std::cout << RED << _type << " has been destroyed." << RESET << std::endl;
 }
 
 void Dog::makeSound() const
 {
-       std::cout << GREEN << "Dog says: " << _type << " WOOF" << RESET << std::endl;
+       std::cout << GREEN << _type << " says: " << " WOOF" << RESET << std::endl;
+}
+
+void Dog::setIdea(int index, std::string idea) const
+{
+    this->_brain->setIdea(index, idea);
+}
+
+std::string Dog::getIdea(int index) const
+{
+    return this->_brain->getIdea(index);
 }
