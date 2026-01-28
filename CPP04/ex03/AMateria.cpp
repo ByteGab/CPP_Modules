@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:16:13 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/28 21:59:51 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/28 22:16:36 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ AMateria::AMateria(std::string const &type) : _type(type)
 
 AMateria::AMateria(const AMateria &cpy) : _type(cpy._type)
 {
-    std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
+        std::cout << CYAN << "AMateria Copy Constructor called" << RESET << std::endl;
 }
 
 AMateria &AMateria::operator=(const AMateria &cpy)
 {
    (void)cpy;
+    std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
    return (*this);
 }
 
