@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:48:33 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/28 19:50:37 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/28 22:23:45 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #define CURE_HPP
 
 #include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class Cure
+class Cure : public AMateria
 {
     public:
         // constructor default
@@ -27,7 +28,7 @@ class Cure
         // destructor
         virtual ~Cure();
 
-        virtual Cure* clone() const = 0;
+        virtual AMateria* clone() const;
     	virtual void use(ICharacter& target);
 };
 
