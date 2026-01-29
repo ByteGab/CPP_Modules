@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:36:34 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/28 22:24:00 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/29 21:22:31 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 Ice::Ice(void) : AMateria("ice")
 {
-    std::cout << GREEN << "Ice " << _type << " has been constructed!" << RESET << std::endl;   
+    std::cout << GREEN << "Ice has been constructed!" << RESET << std::endl;   
 }
 
 Ice::Ice(const Ice &cpy) : AMateria(cpy)
 {
-    std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
+    std::cout << CYAN << "Ice Copy Constructor called" << RESET << std::endl;
 }
-
 Ice &Ice::operator=(const Ice &cpy)
 {
-    if (this != &cpy) // delete??
+    if (this != &cpy)
     {
         AMateria::operator=(cpy);
     }
@@ -34,7 +33,7 @@ Ice &Ice::operator=(const Ice &cpy)
 
 Ice::~Ice()
 {
-    std::cout << RED << "Ice " << _type << " has been destroyed." << RESET << std::endl;
+    std::cout << RED << "Ice has been destroyed." << RESET << std::endl;
 }
 
 AMateria *Ice::clone(void) const

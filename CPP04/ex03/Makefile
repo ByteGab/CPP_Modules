@@ -1,6 +1,6 @@
 
-NAME            = exercise02
-SOURCES         =  main.cpp Brain.cpp Dog.cpp Cat.cpp AAnimal.cpp WrongAnimal.cpp WrongCat.cpp
+NAME            = exercise03
+SOURCES         =  main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJECTS         = $(SOURCES:.cpp=.o)
 
 CC              = c++

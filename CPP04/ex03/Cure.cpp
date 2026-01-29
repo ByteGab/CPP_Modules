@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:48:24 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/28 22:27:01 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/29 21:23:37 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cure::Cure(void) : AMateria("cure")
 {
-    std::cout << GREEN << "Cure " << _type << " has been constructed!" << RESET << std::endl;   
+    std::cout << GREEN << "Cure has been constructed!" << RESET << std::endl;   
 }
 
 Cure::Cure(const Cure &cpy) : AMateria(cpy)
@@ -24,7 +24,7 @@ Cure::Cure(const Cure &cpy) : AMateria(cpy)
 
 Cure &Cure::operator=(const Cure &cpy)
 {
-    if (this != &cpy) // delete??
+    if (this != &cpy)
     {
         AMateria::operator=(cpy);
     }
@@ -34,7 +34,7 @@ Cure &Cure::operator=(const Cure &cpy)
 
 Cure::~Cure()
 {
-    std::cout << RED << "Cure " << _type << " has been destroyed." << RESET << std::endl;
+    std::cout << RED << "Cure has been destroyed." << RESET << std::endl;
 }
 
 AMateria *Cure::clone(void) const
