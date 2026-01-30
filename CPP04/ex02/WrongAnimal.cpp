@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 20:42:56 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/26 22:36:16 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:39:57 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &cpy) :_type (cpy._type)
 {
     std::cout << CYAN << "Animal Copy Constructor called" << RESET << std::endl;
 }
-// operator overload
+
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &cpy)
 {
     if (this != &cpy)
