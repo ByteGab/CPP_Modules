@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:27:39 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/27 20:01:39 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:26:22 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Cat : public Animal
         // destructor
         virtual ~Cat();
         
-        void makeSound() const;
+        virtual void makeSound() const;
         void setIdea(int index, std::string idea) const;
         std::string getIdea(int index) const;
 };

@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:27:39 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/26 22:33:47 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:25:17 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     // destructor
     virtual ~Cat();
     
-    void makeSound() const;
+    virtual void makeSound() const;
 };
 
 #endif
