@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:50:45 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/27 18:08:37 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:10:25 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Cat::Cat(void) : Animal("Cat")
 {
-   std::cout << GREEN << "Cat " << _type << " has been constructed!" << RESET << std::endl;
+   std::cout << GREEN << "Cat has been constructed!" << RESET << std::endl;
 }
 
 Cat::Cat(const Cat &cpy) : Animal (cpy)
@@ -33,10 +33,10 @@ Cat &Cat::operator=(const Cat &cpy)
 
 Cat::~Cat()
 {
-    std::cout << RED << "Cat " << _type << " has been destroyed." << RESET << std::endl;
+    std::cout << RED << "Cat has been destroyed." << RESET << std::endl;
 }
 
 void Cat::makeSound() const
 {
-       std::cout << GREEN << "Cat says: " << _type << " MIAU" << RESET << std::endl;
+       std::cout << GREEN << "Cat says: MIAU" << RESET << std::endl;
 }

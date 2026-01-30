@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:37:42 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/26 22:36:02 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:09:34 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog(void) : Animal("Dog")
 {
-   std::cout << GREEN << "Dog " << _type << " has been constructed!" << RESET << std::endl;
+   std::cout << GREEN << "Dog has been constructed!" << RESET << std::endl;
 }
 
 Dog::Dog(const Dog &cpy) : Animal (cpy)
@@ -32,10 +32,10 @@ Dog &Dog::operator=(const Dog &cpy)
 
 Dog::~Dog()
 {
-    std::cout << RED << "Dog " << _type << " has been destroyed." << RESET << std::endl;
+    std::cout << RED << "Dog has been destroyed." << RESET << std::endl;
 }
 
 void Dog::makeSound() const
 {
-       std::cout << GREEN << "Dog says: " << _type << " WOOF" << RESET << std::endl;
+       std::cout << GREEN << "Dog says: WOOF" << RESET << std::endl;
 }
