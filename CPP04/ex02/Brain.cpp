@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:46:16 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/30 10:45:17 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:44:49 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Brain::Brain(const Brain &cpy)
 }
 Brain &Brain::operator=(const Brain &cpy)
 {
-     if (this != &cpy)
+    if (this != &cpy)
     {
         for (int i = 0; i < 100; i++)
             this->ideas[i] = cpy.ideas[i];

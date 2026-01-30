@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 20:14:16 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/29 21:20:37 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:49:13 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,26 @@ int main()
 
     std::cout << std::endl << BLUE << "=== TEST 2: DEEP COPY & MEMORY MANAGEMENT ===" << std::endl;
     {
-        Character* cloud = new Character("Cloud");
+        Character* paco = new Character("Paco");
 
-        AMateria* materia_suelta = new Ice(); 
+        AMateria* trash = new Ice(); 
         
-        cloud->equip(materia_suelta);
-        cloud->equip(new Cure());
+        paco->equip(trash);
+        paco->equip(new Cure());
 
-        Character* cloud_clone = new Character(*cloud);
-        cloud->unequip(0); 
+        Character* paco_clone = new Character(*paco);
+        paco->unequip(0); 
         
-        delete materia_suelta;
+        delete trash;
 
         std::cout << YELLOW << "--- The clone tries to use his magic (it should work) ---" << std::endl;
         std::cout << "If it were Shallow Copy, the clone would fail because we erased the original material" << RESET << std::endl;
         
-        cloud_clone->use(0, *cloud); 
-        cloud_clone->use(1, *cloud);
+        paco_clone->use(0, *paco); 
+        paco_clone->use(1, *paco);
 
-        delete cloud;
-        delete cloud_clone;
+        delete paco;
+        delete paco_clone;
     }
     return 0;
 }

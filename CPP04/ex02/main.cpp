@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:25:29 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/27 21:22:41 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:51:46 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int main()
         std::cout << "Original now thinks:   " << original.getIdea(0) << std::endl;
         std::cout << "The COPY still thinks: " << copy.getIdea(0) << std::endl;
 
-        // Verification
         if (copy.getIdea(0) == "I want a bone!")
             std::cout << GREEN << "\n✅ SUCCESS: The copy kept the old idea. It is a Deep Copy!" << RESET << std::endl;
         else
