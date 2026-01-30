@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:46:16 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/27 17:57:58 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:45:17 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ std::string Brain::getIdea(int index) const
 {
     if (index >= 0 && index < 100)
         return (this->ideas[index]);
-    return "Idea fuera de rango";
+    return "Idea out of range";
 }
