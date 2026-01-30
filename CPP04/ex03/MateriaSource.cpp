@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 12:44:32 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/29 20:13:25 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:55:19 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ MateriaSource::MateriaSource(void)
 }
 MateriaSource::MateriaSource(const MateriaSource &cpy)
 {
-          for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 4; i++)
     {
         if (cpy._templates[i])
             this->_templates[i] = cpy._templates[i]->clone();
@@ -54,7 +54,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &cpy)
     std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
     return (*this);
 }
-// destructor
+
 MateriaSource::~MateriaSource()
 {
     for (int i = 0; i < 4; i++)
@@ -87,5 +87,5 @@ AMateria *MateriaSource::createMateria(std::string const &type)
         if (_templates[i] && _templates[i]->getType() == type)
             return _templates[i]->clone();
     }
-    return 0;
+    return (0);
 }
