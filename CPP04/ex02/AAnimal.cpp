@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:03:11 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/27 21:09:34 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:02:30 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ AAnimal::AAnimal(const AAnimal &cpy) : _type (cpy._type)
 
 AAnimal &AAnimal::operator=(const AAnimal &cpy)
 {
-   if (this != &cpy)
+    if (this != &cpy)
         _type = cpy._type;
     std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
     return (*this);

@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:37:42 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/30 10:09:34 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:00:53 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-       std::cout << GREEN << "Dog says: WOOF" << RESET << std::endl;
+    std::cout << GREEN << "Dog says: WOOF" << RESET << std::endl;
 }

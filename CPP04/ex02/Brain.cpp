@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:46:16 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/30 11:44:49 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:06:22 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ Brain::~Brain()
 
 void Brain::setIdea(int index,  std::string idea)
 {
-      if (index >= 0 && index < 100)
+    if (index >= 0 && index < 100)
         this->ideas[index] = idea;  
 }
 std::string Brain::getIdea(int index) const
 {
     if (index >= 0 && index < 100)
         return (this->ideas[index]);
-    return "Idea out of range";
+    return ("Idea out of range");
 }

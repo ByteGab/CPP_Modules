@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:50:45 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/30 10:10:25 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:00:50 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ Cat::~Cat()
 
 void Cat::makeSound() const
 {
-       std::cout << GREEN << "Cat says: MIAU" << RESET << std::endl;
+    std::cout << GREEN << "Cat says: MIAU" << RESET << std::endl;
 }

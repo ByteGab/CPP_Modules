@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:48:24 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/29 21:23:37 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:03:57 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ Cure::Cure(const Cure &cpy) : AMateria(cpy)
 Cure &Cure::operator=(const Cure &cpy)
 {
     if (this != &cpy)
-    {
         AMateria::operator=(cpy);
-    }
     std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
     return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:37:42 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/27 18:07:50 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:01:50 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog(void) : Animal("Dog")
 {
     this->_brain = new Brain();
-   std::cout << GREEN <<  _type << " has been constructed!" << RESET << std::endl;
+    std::cout << GREEN <<  _type << " has been constructed!" << RESET << std::endl;
 }
 
 Dog::Dog(const Dog &cpy) : Animal (cpy)
@@ -44,7 +44,7 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-       std::cout << GREEN << _type << " says: " << " WOOF" << RESET << std::endl;
+    std::cout << GREEN << _type << " says: " << " WOOF" << RESET << std::endl;
 }
 
 void Dog::setIdea(int index, std::string idea) const

@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 20:26:29 by gafreire          #+#    #+#             */
-/*   Updated: 2026/01/26 22:36:07 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:02:03 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound() const
 {
-       std::cout << GREEN << "WrongCat says: " << _type << " MIAU" << RESET << std::endl;
+    std::cout << GREEN << "WrongCat says: " << _type << " MIAU" << RESET << std::endl;
 }
