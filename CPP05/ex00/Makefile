@@ -1,5 +1,5 @@
-NAME            = exercise03
-SOURCES         =  main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+NAME            = exercise00
+SOURCES         =  main.cpp main.cpp Bureaucrat.cpp Bureaucrat.hpp
 OBJECTS         = $(SOURCES:.cpp=.o)
 
 CC              = c++

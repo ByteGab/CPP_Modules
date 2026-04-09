@@ -6,10 +6,12 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 17:42:01 by gafreire          #+#    #+#             */
-/*   Updated: 2026/03/02 18:36:09 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/03/13 07:23:58 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 #include <string>
 #include <iostream>
 #include <exception>
@@ -45,3 +47,5 @@ class  Bureaucrat
         };
 };
 std::ostream &operator<<(std::ostream &src, Bureaucrat const &other);
+
+#endif
