@@ -1,5 +1,5 @@
 NAME            = exercise00
-SOURCES         =  main.cpp main.cpp Bureaucrat.cpp Bureaucrat.hpp
+SOURCES         = main.cpp Bureaucrat.cpp
 OBJECTS         = $(SOURCES:.cpp=.o)
 
 CC              = c++
@@ -7,6 +7,10 @@ CFLAGS          = -Wall -Wextra -Werror -std=c++98
 RM              = rm -rf
 
 GREEN           = \033[1;32m
+RED             = \033[1;31m
+YELLOW          = \033[1;33m
+CYAN            = \033[1;36m
+RESET           = \033[0m
 
 
 all: $(NAME)
