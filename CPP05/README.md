@@ -3,49 +3,49 @@
 ![C++](https://img.shields.io/badge/C++-98-blue.svg)
 ![42 School](https://img.shields.io/badge/42-School-black.svg)
 
-Este repositorio contiene las soluciones para el **Módulo 05** de C++ del currículo de 42 School. 
-El objetivo principal de este módulo es profundizar en la Programación Orientada a Objetos introduciendo el manejo seguro de errores a través de **excepciones**, el uso de **clases abstractas**, **polimorfismo** y una aproximación a patrones de diseño como el **Factory Pattern**.
+This repository contains the solutions for **Module 05** of the C++ curriculum at 42 School.
+The main objective of this module is to dive deeper into Object-Oriented Programming by introducing safe error handling through **exceptions**, the use of **abstract classes**, **polymorphism**, and an approach to design patterns such as the **Factory Pattern**.
 
-## Contenido del Módulo
+## Module Contents
 
-El módulo está dividido en 4 ejercicios incrementales que construyen un sistema de "burocracia", gestionando empleados, formularios, firmas y ejecuciones.
+The module is divided into 4 incremental exercises that build a "bureaucracy" system, managing employees, forms, signatures, and executions.
 
 ### [ex00 - Bureaucrat](./ex00)
-Introducción al sistema de excepciones (`try`, `catch`, `throw`).
-- Creación de la clase `Bureaucrat` con atributos inmutables.
-- Implementación de clases de excepciones personalizadas (`GradeTooHighException`, `GradeTooLowException`) que heredan de `std::exception`.
-- Protección estricta del estado del objeto para evitar la instanciación o modificación fuera de los límites permitidos (grado 1 a 150).
+Introduction to the exception system (`try`, `catch`, `throw`).
+- Creation of the `Bureaucrat` class with immutable attributes.
+- Implementation of custom exception classes (`GradeTooHighException`, `GradeTooLowException`) that inherit from `std::exception`.
+- Strict protection of the object's state to prevent instantiation or modification outside the allowed limits (grade 1 to 150).
 
 ### [ex01 - Form](./ex01)
-Interacción entre clases y *Forward Declaration*.
-- Creación de la clase `Form` con requerimientos de niveles para ser firmado y ejecutado.
-- Comunicación bidireccional donde un `Bureaucrat` interactúa con el `Form` para firmarlo.
-- Manejo de fallos de jerarquía devolviendo excepciones claras.
+Class interaction and *Forward Declaration*.
+- Creation of the `Form` class with grade requirements to be signed and executed.
+- Two-way communication where a `Bureaucrat` interacts with the `Form` to sign it.
+- Handling of hierarchy failures by throwing clear exceptions.
 
 ### [ex02 - Concrete Forms](./ex02)
-Clases Abstractas, Métodos Virtuales Puros y Polimorfismo.
-- Refactorización de `Form` a `AForm` (Abstract Form).
-- Creación de tres formularios concretos con acciones específicas:
-  - `ShrubberyCreationForm`: Manejo de archivos de salida (`std::ofstream`) para generar árboles ASCII.
-  - `RobotomyRequestForm`: Generación de probabilidades pseudo-aleatorias (`std::rand`).
-  - `PresidentialPardonForm`: Formulario estándar de mensajes.
-- Delegación de la ejecución mediante polimorfismo.
+Abstract Classes, Pure Virtual Methods, and Polymorphism.
+- Refactoring `Form` into `AForm` (Abstract Form).
+- Creation of three concrete forms with specific actions:
+  - `ShrubberyCreationForm`: File output handling (`std::ofstream`) to generate ASCII trees.
+  - `RobotomyRequestForm`: Pseudo-random probability generation (`std::rand`).
+  - `PresidentialPardonForm`: Standard message form.
+- Delegation of execution using polymorphism.
 
 ### [ex03 - Intern](./ex03)
-Patrón de Diseño Factory sin condicionales extensos.
-- Creación de un `Intern` que genera dinámicamente formularios mediante *strings*.
-- Uso de arrays de punteros a funciones (o métodos) para evadir grandes bloques de `if/else if`, cumpliendo estrictamente con las normas de código limpio de 42.
+Factory Design Pattern without extensive conditionals.
+- Creation of an `Intern` that dynamically generates forms from *strings*.
+- Use of arrays of function pointers (or methods) to avoid large `if/else if` blocks, strictly complying with 42's clean code rules.
 
-## Normas Técnicas (42)
-- Todo el código está escrito y compila en el estándar **C++98**.
-- Está prohibido el uso de la *Standard Template Library* (STL) en este módulo.
-- Todas las clases cumplen estrictamente con la **Orthodox Canonical Form** (Constructor por defecto, Constructor de copia, Operador de asignación, Destructor).
-- Compilado con flags restrictivas: `-Wall -Wextra -Werror`.
-- Sin *memory leaks* (memoria gestionada rigurosamente para los objetos dinámicos instanciados por el Factory).
+## Technical Rules (42)
+- All code is written and compiles in the **C++98** standard.
+- The use of the *Standard Template Library* (STL) is forbidden in this module.
+- All classes strictly comply with the **Orthodox Canonical Form** (Default Constructor, Copy Constructor, Assignment Operator, Destructor).
+- Compiled with restrictive flags: `-Wall -Wextra -Werror`.
+- No *memory leaks* (memory rigorously managed for dynamic objects instantiated by the Factory).
 
-## Compilación y Uso
+## Compilation and Usage
 
-Cada ejercicio tiene su propio `Makefile`. Para compilar y ejecutar las pruebas de cualquier ejercicio, simplemente navega a su directorio y ejecuta `make`:
+Each exercise has its own `Makefile`. To compile and run the tests for any exercise, simply navigate to its directory and run `make`:
 
 ```bash
 cd ex02
@@ -53,11 +53,11 @@ make
 ./exercise02
 ```
 
-Puedes limpiar los archivos objeto y el ejecutable usando:
+You can clean the object files and the executable using:
 ```bash
 make clean
 make fclean
 ```
 
 ---
-*Este proyecto fue desarrollado como parte del Common Core de la escuela 42.*
+*This project was developed as part of the Common Core at 42 School.*
