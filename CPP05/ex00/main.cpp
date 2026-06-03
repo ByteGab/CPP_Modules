@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 17:41:08 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/24 18:41:25 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/03 15:54:25 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int main ()
     {
         Bureaucrat andrei("Andrei", 0);
         std::cout << andrei << std::endl;
-        // Intenta instanciar un Bureaucrat con grado 0 aquí
     }
     catch (std::exception &e) 
     {

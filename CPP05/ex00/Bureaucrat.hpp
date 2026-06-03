@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 17:42:01 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/24 18:10:58 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/03 15:54:06 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,12 @@ class  Bureaucrat
         int _grade;
         
     public:
-        // constructor default
         Bureaucrat(void);
-        // assignment operator
         Bureaucrat(const Bureaucrat &cpy);
         Bureaucrat(std::string const &name, int grade);
-        // operator overload
         Bureaucrat &operator=(const Bureaucrat &cpy);
-        // destructor
         ~Bureaucrat();
+        
         std::string getName() const;      
         int getGrade() const;
         void incrementGrade();
