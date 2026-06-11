@@ -6,14 +6,14 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 19:15:18 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/26 19:24:59 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/11 18:03:43 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef B_HPP
 #define B_HPP
 
-# include "Base.hpp"
+#include "Base.hpp"
 
 class B : public Base 
 {
