@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:56:25 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/26 18:19:54 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/11 18:17:05 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,22 @@ int main(void)
 	original.name = "Gabi";
 	original.value = 42;
 
-	std::cout << std::endl << CYAN << "=== Original Data ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Original Data ━━━" << RESET << std::endl;
 	std::cout << YELLOW << "Address:  " << RESET << MAGENTA << &original << RESET << std::endl;
 	std::cout << YELLOW << "Name:     " << RESET << GREEN << original.name << RESET << std::endl;
 	std::cout << YELLOW << "Value:    " << RESET << GREEN << original.value << RESET << std::endl;
 
 	uintptr_t raw = Serializer::serialize(&original);
-	std::cout << std::endl << CYAN << "=== Serialized ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Serialized ━━━" << RESET << std::endl;
 	std::cout << YELLOW << "Raw value: " << RESET << MAGENTA << raw << RESET << std::endl;
 
 	Data* deserialized = Serializer::deserialize(raw);
-	std::cout << std::endl << CYAN << "=== Deserialized ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Deserialized ━━━" << RESET << std::endl;
 	std::cout << YELLOW << "Address:  " << RESET << MAGENTA << deserialized << RESET << std::endl;
 	std::cout << YELLOW << "Name:     " << RESET << GREEN << deserialized->name << RESET << std::endl;
 	std::cout << YELLOW << "Value:    " << RESET << GREEN << deserialized->value << RESET << std::endl;
 
-	std::cout << std::endl << CYAN << "=== Comparison ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Comparison ━━━" << RESET << std::endl;
 	if (deserialized == &original)
 		std::cout << GREEN << "✓ SUCCESS: Pointers match!" << RESET << std::endl;
 	else
