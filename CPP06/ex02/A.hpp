@@ -6,14 +6,14 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 19:14:56 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/26 19:24:46 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/11 18:03:04 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef A_HPP
-# define A_HPP
+#define A_HPP
 
-# include "Base.hpp"
+#include "Base.hpp"
 
 class A : public Base 
 {

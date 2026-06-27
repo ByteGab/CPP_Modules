@@ -2,8 +2,8 @@ NAME            = convert
 SOURCES         = main.cpp ScalarConverter.cpp
 OBJECTS         = $(SOURCES:.cpp=.o)
 
-CC              = c++
-CFLAGS          = -Wall -Wextra -Werror -std=c++98
+CXX              = c++
+CXXFLAGS          = -Wall -Wextra -Werror -std=c++98
 RM              = rm -rf
 
 GREEN           = \033[1;32m
@@ -17,12 +17,12 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	@echo "$(CYAN)Building $(NAME)...$(RESET)"
-	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) >/dev/null 2>&1
+	@$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME) >/dev/null 2>&1
 	@echo "$(GREEN)$(NAME) built successfully!$(RESET)"
 
 %.o: %.cpp
 	@echo "$(YELLOW)Compiling $<...$(RESET)"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@echo "$(RED)Cleaning object files...$(RESET)"

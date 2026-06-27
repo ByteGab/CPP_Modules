@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 10:56:22 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/25 18:35:49 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:49:39 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ScalarConverter::ScalarConverter(const ScalarConverter& src)
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter& rhs) 
 {
     (void)rhs;
-    return *this;
+    return (*this);
 }
 
 ScalarConverter::~ScalarConverter(void) 
@@ -63,7 +63,8 @@ void ScalarConverter::convert(const std::string& literal)
         float f = static_cast<float>(i);
         double d = static_cast<double>(i);
 
-        if (i >= 0 && i <= 127) {
+        if (i >= 0 && i <= 127) 
+        {
             if (isprint(i)) 
                 std::cout << "char: '" << c << "'\n";
             else 

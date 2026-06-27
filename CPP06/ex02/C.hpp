@@ -6,14 +6,14 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 19:15:28 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/26 19:25:19 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/11 18:03:50 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef C_HPP
-# define C_HPP
+#define C_HPP
 
-# include "Base.hpp"
+#include "Base.hpp"
 
 class C : public Base 
 {
