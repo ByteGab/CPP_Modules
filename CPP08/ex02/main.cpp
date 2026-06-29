@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 13:24:22 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/31 18:44:12 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/29 11:23:52 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 static void testMutantStack()
 {
-    std::cout << std::endl << CYAN << "=== MutantStack<int> ===" << RESET << std::endl;
+    std::cout << std::endl << CYAN << "━━━ MutantStack<int> ━━━" << RESET << std::endl;
 
     MutantStack<int> mstack;
 
@@ -59,7 +59,7 @@ static void testMutantStack()
 
 static void testList()
 {
-    std::cout << std::endl << CYAN << "=== std::list<int> ===" << RESET << std::endl;
+    std::cout << std::endl << CYAN << "━━━ std::list<int> ━━━" << RESET << std::endl;
 
     std::list<int> lst;
 
@@ -93,7 +93,7 @@ static void testList()
 
 static void testConstIterator()
 {
-    std::cout << std::endl << CYAN << "=== const_iterator ===" << RESET << std::endl;
+    std::cout << std::endl << CYAN << "━━━ const_iterator ━━━" << RESET << std::endl;
 
     MutantStack<int> mstack;
     mstack.push(10);
