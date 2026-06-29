@@ -6,13 +6,14 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 20:57:36 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/30 23:35:52 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:49:21 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 #define RESET	"\033[0m"
 #define GREEN	"\033[1;32m"
@@ -22,7 +23,7 @@
 
 int main()
 {
-	std::cout << CYAN << "=== Test 1: Subject example ===" << RESET << std::endl;
+	std::cout << CYAN << "━━━ Test 1: Subject example ━━━" << RESET << std::endl;
 	{
 		Span sp = Span(5);
 		sp.addNumber(6);
@@ -34,7 +35,7 @@ int main()
 		std::cout << GREEN << sp.longestSpan() << RESET << std::endl;
 	}
 
-	std::cout << std::endl << CYAN << "=== Test 2: Overflow exception ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Test 2: Overflow exception ━━━" << RESET << std::endl;
 	{
 		try
 		{
@@ -50,7 +51,7 @@ int main()
 		}
 	}
 
-	std::cout << std::endl << CYAN << "=== Test 3: No elements / one element ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Test 3: No elements / one element ━━━" << RESET << std::endl;
 	{
 		Span sp(5);
 		try
@@ -72,7 +73,7 @@ int main()
 		}
 	}
 
-	std::cout << std::endl << CYAN << "=== Test 4: 10,000 numbers ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Test 4: 10,000 numbers ━━━" << RESET << std::endl;
 	{
 		Span big(10000);
         
@@ -83,17 +84,17 @@ int main()
 		std::cout << GREEN << "Longest:  " << big.longestSpan() << RESET << std::endl;
 	}
 
-	std::cout << std::endl << CYAN << "=== Test 5: 100,000 random numbers ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Test 5: 100,000 random numbers ━━━" << RESET << std::endl;
 	{
 		Span huge(100000);
-		std::srand(42);
+		std::srand(std::time(NULL));
 		for (int i = 0; i < 100000; ++i)
 			huge.addNumber(std::rand());
 		std::cout << GREEN << "Shortest: " << huge.shortestSpan() << RESET << std::endl;
 		std::cout << GREEN << "Longest:  " << huge.longestSpan() << RESET << std::endl;
 	}
 
-	std::cout << std::endl << CYAN << "=== Test 6: addRange with iterators ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Test 6: addRange with iterators ━━━" << RESET << std::endl;
 	{
 		std::vector<int> v;
 		v.push_back(100);
@@ -109,7 +110,7 @@ int main()
 		std::cout << GREEN << "Longest:  " << sp.longestSpan() << RESET << std::endl;
 	}
 
-	std::cout << std::endl << CYAN << "=== Test 7: addRange overflow ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Test 7: addRange overflow ━━━" << RESET << std::endl;
 	{
 		try
 		{
@@ -125,7 +126,7 @@ int main()
 		}
 	}
 
-	std::cout << std::endl << CYAN << "=== Test 8: Copy and assignment ===" << RESET << std::endl;
+	std::cout << std::endl << CYAN << "━━━ Test 8: Copy and assignment ━━━" << RESET << std::endl;
 	{
 		Span original(5);
 		original.addNumber(10);
