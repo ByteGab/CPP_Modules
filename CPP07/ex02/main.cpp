@@ -165,7 +165,8 @@ int main(void)
 			std::cout << RED << "    ✗ Shallow copy detected!" << RST << std::endl;
 
 		printTest("Self-assignment (a = a)");
-		a = a;
+		Array<int>& ref = a;
+		a = ref;
 		std::cout << "    a: ";
 		for (unsigned int i = 0; i < a.size(); i++)
 			std::cout << DIM << "[" << RST << CYN << a[i] << RST << DIM << "]" << RST;
