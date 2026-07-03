@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 18:39:52 by gafreire          #+#    #+#             */
-/*   Updated: 2026/06/29 10:47:19 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:23:07 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@
 int main()
 {
 	std::cout << CYAN << "━━━ Test with std::vector ━━━" << RESET << std::endl;
+	
 	std::vector<int> vec;
 	vec.push_back(10);
 	vec.push_back(20);
 	vec.push_back(30);
 	vec.push_back(40);
 	vec.push_back(50);
+	
 	try
 	{
 		std::vector<int>::iterator it = easyfind(vec, 30);
@@ -40,6 +42,7 @@ int main()
 	{
 		std::cout << RED << "✘ Error: " << e.what() << RESET << std::endl;
 	}
+	
 	try
 	{
 		std::vector<int>::iterator it = easyfind(vec, 99);
@@ -51,10 +54,12 @@ int main()
 	}
 
 	std::cout << std::endl << CYAN << "━━━ Test with std::list ━━━" << RESET << std::endl;
+	
 	std::list<int> lst;
 	lst.push_back(5);
 	lst.push_back(15);
 	lst.push_back(25);
+	
 	try
 	{
 		std::list<int>::iterator it = easyfind(lst, 15);
@@ -66,10 +71,12 @@ int main()
 	}
 
 	std::cout << std::endl << CYAN << "━━━ Test with std::deque ━━━" << RESET << std::endl;
+	
 	std::deque<int> deq;
 	deq.push_back(1);
 	deq.push_back(2);
 	deq.push_back(3);
+	
 	try
 	{
 		std::deque<int>::iterator it = easyfind(deq, 1);
@@ -81,6 +88,7 @@ int main()
 	}
 
 	std::cout << std::endl << CYAN << "━━━ Test with empty container ━━━" << RESET << std::endl;
+	
 	std::vector<int> empty;
 	try
 	{
@@ -92,5 +100,5 @@ int main()
 		std::cout << RED << "✘ Error: " << e.what() << RESET << std::endl;
 	}
 
-	return 0;
+	return (0);
 }
