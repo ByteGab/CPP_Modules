@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 20:57:36 by gafreire          #+#    #+#             */
-/*   Updated: 2026/06/29 10:49:21 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:48:43 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int main()
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
+		
 		std::cout << GREEN << sp.shortestSpan() << RESET << std::endl;
 		std::cout << GREEN << sp.longestSpan() << RESET << std::endl;
 	}
@@ -62,6 +63,7 @@ int main()
 		{
 			std::cout << YELLOW << "Empty span: " << e.what() << RESET << std::endl;
 		}
+		
 		sp.addNumber(42);
 		try
 		{
@@ -88,8 +90,10 @@ int main()
 	{
 		Span huge(100000);
 		std::srand(std::time(NULL));
+		
 		for (int i = 0; i < 100000; ++i)
 			huge.addNumber(std::rand());
+		
 		std::cout << GREEN << "Shortest: " << huge.shortestSpan() << RESET << std::endl;
 		std::cout << GREEN << "Longest:  " << huge.longestSpan() << RESET << std::endl;
 	}

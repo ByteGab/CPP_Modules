@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 20:58:03 by gafreire          #+#    #+#             */
-/*   Updated: 2026/05/30 23:30:22 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:45:03 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,5 @@ int	Span::longestSpan() const
 	int min = *std::min_element(_numbers.begin(), _numbers.end());
 	int max = *std::max_element(_numbers.begin(), _numbers.end());
     
-	return max - min;
+	return (max - min);
 }
