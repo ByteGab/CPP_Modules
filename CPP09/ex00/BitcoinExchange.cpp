@@ -6,7 +6,7 @@
 /*   By: gafreire <gafreire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 12:25:48 by gafreire          #+#    #+#             */
-/*   Updated: 2026/07/14 13:50:40 by gafreire         ###   ########.fr       */
+/*   Updated: 2026/07/16 10:09:39 by gafreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ void BitcoinExchange::processInput(const std::string& filename)
         if (line.empty())
             continue ;
         size_t pos = line.find(" | ");
+        
         if (pos == std::string::npos)
         {
             std::cerr << "Error: bad input => " << line << std::endl;
@@ -157,6 +158,15 @@ void BitcoinExchange::processInput(const std::string& filename)
             continue ;
         }
 
+        char *ep;
+        std::strtof(valueStr.c_str(), &ep);
+        
+        if (ep == valueStr.c_str() || *ep != '\0')
+        {
+            std::cerr << "Error: bad input => " << line << std::endl;
+            continue ;
+        }
+        
         float value;
         if (!isValidValue(valueStr, value))
             continue ;
